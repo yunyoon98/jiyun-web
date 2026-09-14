@@ -134,7 +134,7 @@
      --------------------------------------------------------- */
   var hero = document.querySelector('.hero');
   if (hero) {
-    var words = hero.querySelectorAll('.hero__title .w');
+    var words = hero.querySelectorAll('.hero__text .w');
     for (var i = 0; i < words.length; i++) {
       words[i].style.transitionDelay = (0.28 + i * 0.045).toFixed(3) + 's';
     }

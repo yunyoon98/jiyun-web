@@ -11,14 +11,13 @@ Four pages, no build step, no dependencies.
 
 ```
 index.html          hero + opening statement + portrait, meta, intro
-research.html       four research projects + figures
+research.html       four research projects
 publications.html   peer-reviewed papers + conference posters (lightbox)
 cv.html             methods & tools, education & honors, CV download
 
 styles.css          all styling
 main.js             hero phylogram, scroll reveals, nav state, mobile menu, poster lightbox
 assets/
-  figures/          figure crops used in page bodies (from the conference posters)
   posters/          poster PDFs + web-sized JPEG previews
   img/              photographs: hero (Salzburg), portrait, closing band (Hallstatt)
   cv/               academic CV
@@ -86,17 +85,7 @@ and move `aria-current="page"` to the new nav item — in all four existing file
 
 ## Notes
 
-- Figures in `assets/figures/` have the page colour multiplied into them at export time,
-  so their backgrounds match `--bg` exactly and no CSS blend mode is needed. If you change
-  `--bg`, re-export the figures with the matching colour:
-
-  ```sh
-  magick in.jpg \( +clone -fill '#ddded8' -colorize 100 \) \
-    -compose multiply -composite -quality 88 -strip out.jpg
-  ```
-
-  Source figures whose background is a light grey rather than white need a levels pass
-  first (`-level 0%,<bg/255>%`) so the background lands on white before the multiply.
-- The hero animation is a procedurally generated radial cladogram — a decorative
+- The footer background is a procedurally generated radial cladogram — a decorative
   motif, not real data.
+- Photographs are exported with `-strip` so no EXIF or GPS data reaches the public site.
 - Fonts are Cormorant Garamond and Inter, loaded from Google Fonts.
