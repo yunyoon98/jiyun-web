@@ -275,6 +275,14 @@
   /* ---------------------------------------------------------
      7. Portrait: collapse the row back to two columns if absent
      --------------------------------------------------------- */
+  /* any figure marked data-optional removes itself when its image is absent */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-optional] img'), function (img) {
+    var fig = img.closest('[data-optional]');
+    var hide = function () { fig.hidden = true; };
+    img.addEventListener('error', hide);
+    if (img.complete && img.naturalWidth === 0) hide();
+  });
+
   var portrait = document.getElementById('portraitImg');
   if (portrait) {
     portrait.addEventListener('error', function () {

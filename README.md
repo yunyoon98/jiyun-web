@@ -71,11 +71,19 @@ magick out-1.jpg -resize 1100x -quality 82 -strip assets/posters/<slug>.jpg
 **Research projects.** Add an `<li class="project">` to the `.projects` list in
 `research.html` and renumber the `.project__no` spans.
 
-**Photographs.** `assets/img/portrait.jpg` (4:5, home page), `hero-salzburg.jpg` (home
-hero, cover-cropped so keep the bottom-left quiet — the title sits there), and
-`hallstatt.jpg` (closing band on cv.html). Export with `-strip` so no EXIF or GPS data
-reaches the public site. If `portrait.jpg` is missing the figure removes itself and the
-intro row falls back to two columns.
+**Photographs.** `assets/img/` holds `portrait.jpg` (4:5, main slot on the home page),
+`portrait-alt.jpg` (4:5, the smaller second portrait below the intro), `hero-salzburg.jpg`
+(home hero — cover-cropped, so keep the bottom-left quiet because the title sits there)
+and `hallstatt.jpg` (closing band on cv.html).
+
+Export with `-strip` so no EXIF or GPS data reaches the public site. Portraits are
+duotoned into the page palette (shadows `#1b1a1a`, highlights `#ddded8`) so their light
+areas match the background; landscapes stay in colour. A studio portrait with a coloured
+backdrop needs the backdrop replaced with `--bg` first, otherwise the duotone turns it
+into a visible grey rectangle.
+
+A figure marked `data-optional` removes itself when its image is missing, and if
+`portrait.jpg` is absent the intro row falls back to two columns.
 
 **CV.** Replace `assets/cv/Ji-Yun-Kim-CV.docx`, keeping the filename, or update the
 links in `cv.html` and the footer.
