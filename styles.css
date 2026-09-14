@@ -155,8 +155,21 @@ section[id], footer[id]{ scroll-margin-top:84px }
 .portrait img{ width:100%; height:auto; aspect-ratio:4/5; object-fit:cover }
 .about__grid .col-text{ grid-column:9 / 13 }
 
-.portrait-alt{ width:62%; margin-top:clamp(14px,1.6vw,22px) }
+/* 두 번째 초상은 첫 번째의 오른쪽 아래 모서리에 엇물려 얹힌다.
+   페이지색 매트를 둘러 두 장이 겹쳐도 층이 구분되게 한다. */
+.portrait-alt{
+  position:relative; z-index:1;
+  width:60%;
+  margin-left:auto; margin-right:-12%;
+  margin-top:-22%;
+  padding:10px; background:var(--bg);
+}
 .portrait-alt img{ width:100%; height:auto; aspect-ratio:4/5; object-fit:cover }
+
+/* 첫 번째보다 늦게, 오른쪽에서 미끄러져 들어온다 */
+.js .portrait-alt[data-reveal]{ opacity:0; transform:translate(28px,20px) scale(.965) }
+.js .portrait-alt[data-reveal].is-in{ opacity:1; transform:none }
+.portrait-alt[data-reveal]{ transition-duration:1.15s }
 
 /* no photo yet: fall back to the original two-column row */
 .no-portrait .portraits{ display:none }
@@ -487,7 +500,7 @@ section[id], footer[id]{ scroll-margin-top:84px }
   .next .label, .next__title, .next__arrow{ grid-column:1; justify-self:start }
   .meta, .no-portrait .meta{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:30px var(--gap) }
   .portrait img{ max-width:320px }
-  .portrait-alt{ width:58%; max-width:190px }
+  .portrait-alt{ width:56%; max-width:200px; margin-right:-8%; margin-top:-16% }
   .h2{ font-size:clamp(1.9rem,7vw,2.6rem) }
   .lede{ padding-bottom:0 }
 
