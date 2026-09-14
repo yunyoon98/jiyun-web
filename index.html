@@ -3,39 +3,179 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jiyun&rsquo;s homepage</title>
-<style>
-  html, body { height: 100% }
-  body {
-    margin: 0;
-    display: grid;
-    place-items: center;
-    padding: 24px;
-    text-align: center;
-    background: #ddded8;
-    color: #1b1a1a;
-    font-family: "Times New Roman", Times, serif;
-  }
-  h1 {
-    margin: 0;
-    font-weight: 400;
-    font-size: clamp(2.2rem, 9vw, 6rem);
-    line-height: 1.05;
-    letter-spacing: -.02em;
-  }
-  p {
-    margin: 20px 0 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 13px;
-    letter-spacing: .04em;
-    color: #5f6058;
-  }
-</style>
+<script>document.documentElement.classList.add('js');</script>
+<title>Ji-Yun Kim — Genomic Epidemiology of Avian Influenza</title>
+<meta name="description" content="Ji-Yun Kim is a Ph.D. student in Veterinary Microbiology at Kyungpook National University, working on influenza virus evolution, phylogenetics and phylodynamics, and whole-genome sequencing.">
+<meta name="author" content="Ji-Yun Kim">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Ji-Yun Kim — Genomic Epidemiology of Avian Influenza">
+<meta property="og:description" content="Ji-Yun Kim is a Ph.D. student in Veterinary Microbiology at Kyungpook National University, working on influenza virus evolution, phylogenetics and phylodynamics, and whole-genome sequencing.">
+<meta property="og:image" content="assets/img/hero-salzburg.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ji-Yun Kim",
+  "jobTitle": "Ph.D. Student, Veterinary Microbiology",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "College of Veterinary Medicine, Kyungpook National University"
+  },
+  "email": "mailto:skykjiyun@naver.com",
+  "identifier": "https://orcid.org/0009-0003-7527-6175",
+  "sameAs": [
+    "https://orcid.org/0009-0003-7527-6175",
+    "https://scholar.google.com/citations?user=RZ4CuzIAAAAJ&hl=ko"
+  ],
+  "knowsAbout": ["Influenza virus evolution", "Phylodynamics", "Phylogenetics", "Genomic surveillance", "Whole-genome sequencing"]
+}
+</script>
 </head>
+
 <body>
-  <main>
-    <h1>Jiyun&rsquo;s homepage</h1>
-    <p>Coming soon</p>
-  </main>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ─────────────────────────  NAV  ───────────────────────── -->
+<header class="nav on-dark" id="nav">
+  <nav class="nav__inner" aria-label="Primary">
+    <ul class="nav__links">
+      <li><a href="index.html" aria-current="page">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+
+    <a class="nav__mark" href="index.html">Ji-Yun Kim</a>
+
+    <div class="nav__end">
+      <a class="pill" href="mailto:skykjiyun@naver.com">Get in touch</a>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav__toggle-label">Menu</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div class="menu" id="navMenu" hidden>
+  <ul>
+    <li><a href="index.html" aria-current="page">About</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="mailto:skykjiyun@naver.com">Contact</a></li>
+  </ul>
+</div>
+
+<main id="main">
+<div class="frame" id="top">
+<!-- ─────────────────────────  HERO  ───────────────────────── -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero__canvas">
+      <img src="assets/img/hero-salzburg.jpg" alt="Salzburg at dusk seen from above, the old town and river under a pink and deep blue sky." fetchpriority="high" decoding="async">
+    </div>
+    <div class="hero__grain" aria-hidden="true"></div>
+    <h1 class="hero__title">
+      <span class="line"><span class="w">Ji-Yun</span> <span class="w">Kim</span></span>
+      <span class="line line--sub"><span class="w">Mapping</span> <span class="w">how</span> <span class="w">influenza</span> <em class="w">moves</em><span class="w">.</span></span>
+    </h1>
+    <p class="hero__credit">Salzburg, Austria &middot; photograph by Ji-Yun Kim</p>
+  </section>
+
+<!-- ─────────────────────────  ABOUT  ───────────────────────── -->
+  <section class="block" id="about">
+    <div class="grid">
+      <h2 class="statement" data-reveal>I follow influenza viruses through their genomes &mdash; how they evolve, reassort, and move between hosts, regions, and continents.</h2>
+    </div>
+
+    <div class="grid about__grid">
+      <!-- replace assets/img/portrait.jpg with a real photo (vertical, 4:5, 1200px+ wide).
+           If the file is missing the figure hides itself and the row falls back to two columns. -->
+      <figure class="portrait" data-reveal>
+        <img id="portraitImg" src="assets/img/portrait.jpg" alt="Ji-Yun Kim" decoding="async">
+      </figure>
+
+      <div class="meta" data-reveal data-delay="1">
+        <div class="meta__item"><p class="label">Fields</p><p>Veterinary Microbiology</p><p>Genomic Epidemiology</p></div>
+        <div class="meta__item"><p class="label">Methods</p><p>Phylogenetics &amp; phylodynamics</p><p>Whole-genome sequencing</p></div>
+        <div class="meta__item"><p class="label">Position</p><p>Ph.D. Student, 2024&ndash;Present</p></div>
+        <div class="meta__item"><p class="label">Institution</p><p>Kyungpook National University</p></div>
+        <div class="meta__item"><p class="label">Location</p><p>Daegu, Republic of Korea</p></div>
+        <div class="meta__item"><p class="label">Profiles</p>
+          <p><a class="ul" href="https://orcid.org/0009-0003-7527-6175" target="_blank" rel="noopener">ORCID</a></p>
+          <p><a class="ul" href="https://scholar.google.com/citations?user=RZ4CuzIAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Google Scholar</a></p>
+        </div>
+      </div>
+
+      <div class="col-text">
+        <div class="prose" data-reveal data-delay="2">
+          <p>I am a Ph.D. student in the Laboratory of Veterinary Microbiology at the College of Veterinary Medicine, Kyungpook National University.</p>
+          <p>Most of my work sits at the intersection of phylogenetics, phylodynamics, and whole-genome sequencing. I have reconstructed the introduction and spread of clade 2.3.4.4b highly pathogenic avian influenza in South Korea, traced intercontinental movement of avian influenza viruses between Eurasia and North America, and built an Asia-wide genotyping framework from all eight genomic segments.</p>
+          <p>Alongside the computational work I work at the bench: virus isolation in embryonated chicken eggs, RT-PCR and qPCR, viral genome enrichment, NGS library preparation, and avian pathogenicity studies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────  NEXT  ───────────────────────── -->
+  <a class="next" href="research.html">
+    <span class="next__row">
+      <span class="label">Next</span>
+      <span class="next__title">Selected <em>research</em></span>
+      <span class="next__arrow" aria-hidden="true">&#8599;</span>
+    </span>
+  </a>
+
+</div><!-- /frame -->
+
+<!-- ─────────────────────────  CONTACT / FOOTER  ───────────────────────── -->
+<footer class="foot" id="contact">
+  <div class="foot__canvas" aria-hidden="true">
+    <svg id="phylo" viewBox="-105 -105 210 210" preserveAspectRatio="xMidYMid slice" role="presentation"></svg>
+  </div>
+  <div class="foot__inner">
+    <div class="grid foot__top">
+      <h2 class="h2 foot__h" data-reveal>Curious?</h2>
+      <div class="foot__cols">
+        <div data-reveal><p class="label">Reach me at</p>
+          <p><a class="ul" href="mailto:skykjiyun@naver.com">skykjiyun@naver.com</a></p>
+          <p><a class="ul" href="https://orcid.org/0009-0003-7527-6175" target="_blank" rel="noopener">ORCID 0009-0003-7527-6175</a></p>
+          <p><a class="ul" href="https://scholar.google.com/citations?user=RZ4CuzIAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Google Scholar</a></p>
+        </div>
+        <div data-reveal data-delay="1"><p class="label">Currently</p>
+          <p>Laboratory of Veterinary Microbiology</p>
+          <p>Kyungpook National University</p>
+          <p>Daegu 41566, Republic of Korea</p>
+        </div>
+        <div data-reveal data-delay="2"><p class="label">Documents</p>
+          <p><a class="ul" href="assets/cv/Ji-Yun-Kim-CV.docx" download>Academic CV &darr;</a></p>
+        </div>
+        <div data-reveal data-delay="3"><p class="label">Pages</p>
+          <p><a class="ul" href="index.html">About</a></p>
+          <p><a class="ul" href="research.html">Research</a></p>
+          <p><a class="ul" href="publications.html">Publications</a></p>
+          <p><a class="ul" href="cv.html">CV</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot__rule">
+      <span>Laboratory of Veterinary Microbiology</span>
+      <span id="year">2026</span>
+    </div>
+    <div class="foot__mark" aria-hidden="true"><span>JI-YUN</span><span>KIM&copy;</span></div>
+  </div>
+</footer>
+
+</main>
+
+<script src="main.js"></script>
 </body>
 </html>
