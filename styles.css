@@ -341,12 +341,11 @@ section[id], footer[id]{ scroll-margin-top:84px }
 .project__logo-link{ display:block; margin-top:28px; max-width:720px }
 .project__logo{ width:100%; height:auto; filter:grayscale(1) }
 .project h3{
-  grid-column:1 / 6;
   font-family:var(--serif); font-weight:300; font-size:clamp(1.5rem,2.3vw,2.1rem);
   line-height:1.14; letter-spacing:-.008em;
 }
 .project h3 em{ font-style:italic }
-.project__body ul{ grid-column:7 / 12; display:grid; gap:13px }
+.project__body ul{ display:grid; gap:13px }
 .project__body li{ position:relative; padding-left:18px; color:var(--ink-2); font-size:14.5px; line-height:1.6 }
 .project__body li::before{
   content:""; position:absolute; left:0; top:.66em; width:7px; height:1px; background:var(--faint);
@@ -488,8 +487,6 @@ section[id], footer[id]{ scroll-margin-top:84px }
 @media (max-width:1180px){
   .col-text{ grid-column:7 / 13 }
   .meta{ grid-column:1 / 6 }
-  .project h3{ grid-column:1 / 6 }
-  .project__body ul{ grid-column:6 / 12 }
   .pubs__main{ grid-column:2 / 9 }
   .pubs__venue{ grid-column:9 / 12 }
 }
@@ -523,8 +520,7 @@ section[id], footer[id]{ scroll-margin-top:84px }
 
   .project{ grid-template-columns:1fr; row-gap:16px }
   .project__no{ grid-column:1 }
-  .project__body{ grid-column:1; grid-template-columns:1fr; row-gap:18px }
-  .project h3, .project__body ul{ grid-column:1 }
+  .project__body{ grid-column:1 }
 
   .pubs a{ grid-template-columns:1fr; row-gap:12px }
   .pubs__year, .pubs__main, .pubs__venue, .pubs__doi{ grid-column:1; justify-self:start }
