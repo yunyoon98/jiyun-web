@@ -19,7 +19,7 @@ styles.css          all styling
 main.js             hero phylogram, scroll reveals, nav state, mobile menu, poster lightbox
 assets/
   posters/          poster PDFs + web-sized JPEG previews
-  img/              photographs: hero (Salzburg), portrait, closing band (Hallstatt)
+  img/              photographs (hero, portraits, closing band) + project logos
   cv/               academic CV
   favicon.svg
 .nojekyll           tells GitHub Pages to serve files as-is
@@ -70,6 +70,19 @@ magick out-1.jpg -resize 1100x -quality 82 -strip assets/posters/<slug>.jpg
 
 **Research projects.** Add an `<li class="project">` to the `.projects` list in
 `research.html` and renumber the `.project__no` spans.
+
+**Project logos.** A logo in `assets/img/` is displayed at 720 px, so export it at
+1440 px for retina and no wider. `.project__logo` applies `filter:grayscale(1)`, so store
+it grayscale with alpha; a colour PNG costs roughly three times the bytes for the same
+rendered result.
+
+```sh
+magick logo.png -resize 1440x -colorspace Gray -strip \
+  -define png:compression-level=9 assets/img/<slug>.png
+```
+
+Bump the `?v=` query on the `<img src>` whenever the file changes, or browsers keep
+serving the old copy.
 
 **Photographs.** `assets/img/` holds `portrait.jpg` (4:5, main slot on the home page),
 `portrait-alt.jpg` (4:5, the smaller second portrait below the intro), `hero-salzburg.jpg`
